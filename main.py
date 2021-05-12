@@ -1,6 +1,6 @@
 #!/usr/bin/env python
 
-from src.Application.App import App
+from Application.App import App
 
 
 app = App()

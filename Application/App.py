@@ -1,4 +1,4 @@
-from src.Services.ApiService import ApiService
+from Services.ApiService import ApiService
 
 
 class App:

@@ -3,6 +3,11 @@ Following the Responsibility Driven Design,I've identify a Task that need to be 
 using a high level of Abstraction and promoting Encapsulation: simplify Behaviours and hiding data.
 1) Task: to create file according to a JSON file online.
 
+This Application is meant to act like a reminder for the task that have to be done.
+The todo-list can download the tasks from the server everyday (as the exercise suggest),
+or more than once a day (could be run like a service system, as long as it has a name and a configuration file.)
+
+
 ### Dependency Inversion Principle (DIP)
 High level modules should not depends on low levels. Both should depends on abstractions.
 Abstractions should not depend on details.

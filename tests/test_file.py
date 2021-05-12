@@ -21,7 +21,7 @@ class TestFile(TestCase):
             assert (data == self.header_csv)
 
     def test_file_created_header_and_content(self):
-        # Temporary text file in write mode
+        # Temporary text file in write mvode
         with TemporaryFile('w+t') as temp_file:
 
             temp_file.write(self.header_csv +"\n")
@@ -32,5 +32,7 @@ class TestFile(TestCase):
 
             first_line = temp_file.readline()
             second_line = temp_file.readline()
+            temp_file.close()
+
             assert (first_line == self.header_csv+"\n")
             assert (second_line == self.content_test)
