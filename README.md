@@ -20,7 +20,10 @@ In THIS CASE the real-world concepts are:
 - File
 - Storage
 
-The Business code should't depend on technical details but use Abstractions.
+The Business code should't depend on technical details but use Abstractions, so we must 
+design the architecture in order to not depends on the external services or details we are using, 
+in this case the Api.
+
 
 ## The domain model
 Building an Architecture to Support Domain Modeling: Behaviours should come first, 
