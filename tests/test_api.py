@@ -35,3 +35,9 @@ class TestApi(TestCase):
         assert (response.json()[0]['title'] == "vel voluptatem repellat nihil placeat corporis")
         assert (response.json()[0]['completed'] == False)
 
+
+    def test_api_headers(self):
+        # Asking for: "https://jsonplaceholder.typicode.com/todos"
+        response = requests.get(self.api_end_point)
+        assert (response.headers['content-type'] == "application/json; charset=utf-8")
+        assert (response.encoding == "utf-8")
