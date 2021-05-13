@@ -11,7 +11,7 @@ service_type = Configuration.CONF['type']
 app = App(service_type)
 service = app.get_application_service
 
-# Just to show that the server is running
+# Just to show which Service is running
 service().run()
 
 response = service().get_all(**Configuration.CONF)
