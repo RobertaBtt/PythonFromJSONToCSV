@@ -23,7 +23,7 @@ class TestService(TestCase):
         params['end_point'] = self.api_end_point
         params['api_params'] = api_params
 
-        service = s.ServiceAdapter().get_adapter(self.type)
+        service = s.ServiceAdapter().get_service(self.type)
 
         result = service().get_all(**params)
         service().save_to_files(result)

@@ -26,5 +26,5 @@ class ServiceAdapter:
     def __init__(self):
         register()
 
-    def get_adapter(self, service_type):
+    def get_service(self, service_type):
         return SERVICE_ADAPTERS[service_type]
