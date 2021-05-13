@@ -45,7 +45,7 @@ but this is not an Entity that is taken in consideration in this Application.
 Like the name suggest, we are talking about a Service.
 A service runs and it performs a request. in this case calling out an API.
 
-### Run App:
+### Prepare Environment:
 - install python3 and/or check its version with python3 --version
 
 - install pip for python3 with:
