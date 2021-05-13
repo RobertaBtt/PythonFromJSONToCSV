@@ -83,3 +83,8 @@ A service runs and it performs a request. in this case calling out an API.
 
 ## Extra points
 - Use _requests_ library from [PyPI](https://pypi.org/project/requests/)
+
+----
+An image of high level architecture
+
+   ![logo](Architecture_and_future_developments.png)
