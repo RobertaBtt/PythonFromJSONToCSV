@@ -1,6 +1,7 @@
 from unittest import TestCase
 from tempfile import TemporaryFile
-
+import pathlib
+from datetime import datetime
 
 class TestFile(TestCase):
 
@@ -36,3 +37,25 @@ class TestFile(TestCase):
 
             assert (first_line == self.header_csv+"\n")
             assert (second_line == self.content_test)
+
+
+    def test_file_is_created_in_storage(self):
+
+        path = pathlib.Path().absolute()
+        file_name = str(path) + "/storage/" + datetime.today().strftime('%Y_%m_%d')
+
+        todo_id = 1323
+        file_path = file_name + "_" + str(todo_id) + ".csv"
+
+        with open(file_path, mode='w+') as todo_file:
+            todo_file.write(self.header_csv + "\n")
+            todo_file.write("test, test, test, test")
+            todo_file.seek(0)
+
+            first_line = todo_file.readline()
+            second_line = todo_file.readline()
+
+            assert (first_line == self.header_csv+"\n")
+            assert (second_line == "test, test, test, test")
+
+            todo_file.close
