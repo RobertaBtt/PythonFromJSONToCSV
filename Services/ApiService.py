@@ -1,4 +1,5 @@
 from sys import stderr
+import requests
 
 
 class ApiService:
@@ -9,4 +10,8 @@ class ApiService:
 
 
     def get_all(self, **params):
-       pass
+        try:
+            response = requests.get(params['end_point'], params=params['api_params'])
+            return response
+        except Exception as ex:
+            print(ex)

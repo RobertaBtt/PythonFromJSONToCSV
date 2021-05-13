@@ -10,11 +10,20 @@ class TestService(TestCase):
 
     def test_todo_is_saved_in_file(self):
 
-        params = {"completed": "false",
+        # Asking for https://jsonplaceholder.typicode.com/todos?_start=1&_limit=1
+        api_params = {"completed": "false",
                           "_start": str(1),
                           "_limit": str(1)}
 
-        service = s.ServiceAdapter().get_adapter(self.type)
-        result = service().get_all(**params)
+        params = {}
+        params['end_point'] = self.api_end_point
+        params['api_params'] = api_params
 
-        assert (result == "ok")
+        service = s.ServiceAdapter().get_adapter(self.type)
+
+        result = service().get_all(**params)
+        assert (result.status_code == 200)
+        assert (result.json()[0]['userId'] == 1)
+        assert (result.json()[0]['id'] == 2)
+        assert (result.json()[0]['title'] == "quis ut nam facilis et officia qui")
+        assert (result.json()[0]['completed'] == False)
